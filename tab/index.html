@@ -48,13 +48,16 @@
                  <li>
                     <a href="#na" >Naver</a>
                 </li>
+                <li>
+                    <a href="#api-naver" >API</a>
+                </li>
 
 
 				<form id="dd"   method="post"   class="navbar-form navbar-left">
       				<div class="form-group">
-      					<input  id="ez" type="text"  class="form-control" name="query" onKeyPress="if(event.keyCode == 13) { we();coup();tmon();gmarket();naver();return false;}"  >
+      					<input  id="ez" type="text"  class="form-control" name="query" onKeyPress="if(event.keyCode == 13) { we();coup();tmon();gmarket();naver();api_test_naver();return false;}"  >
      			 	</div>
-     	   			<button type="button" class="btn btn-default" onclick="we(),coup(),tmon();gmarket();naver();">Submit</button>
+     	   			<button type="button" class="btn btn-default" onclick="we(),coup(),tmon();gmarket();naver();api_test_naver();">Submit</button>
 				</form>	
             	</ul>
             	
@@ -88,6 +91,12 @@
                 <div class="tab-pane" id="na">
   				<div class="embed-responsive embed-responsive-16by9">
   				<iframe id="naver" ></iframe>
+                </div>
+                </div>
+
+                   <div class="tab-pane" id="api_test_naver">
+  				<div class="embed-responsive embed-responsive-16by9">
+  				<iframe id="api_t_naver" ></iframe>
                 </div>
                 </div>
                 
@@ -180,6 +189,18 @@ function naver(){
         }else{
          document.getElementById('naver').contentWindow.location.href="http://shopping.naver.com/search/all_search.nhn?query="+document.getElementById('ez').value;
         }    }
+    
+};
+
+
+function api_test_naver(){
+document.getElementById("php_code").innerHTML="<?php 
+query("hello");       ?>";    
+
+document.getElementById("api_t_naver").innerHTML="<?php include "api_test_naver.php";?>";    
+
+<?php echo hello;?>
+
     
 };
 
